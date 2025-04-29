@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Spider Feed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="feed-container">
+
+
+    <!-- Stories -->
+    <div id="stories-container" class="stories-container"></div>
+
+    <!-- Botão de adicionar publicação -->
+    <button class="add-btn" id="add-btn">+</button>
+
+    <!-- Formulário de nova publicação -->
+    <div class="form-container" id="form-container" style="display: none;">
+      <h3>Nova Publicação</h3>
+      <form id="form-publicacao">
+        <input type="hidden" id="idUsuario">
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" required>
+        <label for="dataPublicacao">Data</label>
+        <input type="text" id="dataPublicacao" required>
+        <label for="imagem">Imagem</label>
+        <input type="text" id="imagem" required>
+        <label for="local">Local</label>
+        <input type="text" id="local" required>
+        <div class="form-buttons">
+          <button type="submit">Publicar</button>
+          <button type="button" onclick="fecharFormulario()">Cancelar</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Container das publicações -->
+    <div id="posts-container"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

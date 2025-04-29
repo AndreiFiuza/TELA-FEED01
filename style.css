@@ -1,0 +1,246 @@
+/* reset básico */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.feed-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 20px 20px;
+}
+
+/* Botão + */
+.add-btn {
+  position: absolute;
+  top: 20px; right: 20px;
+  width: 40px; height: 40px;
+  background-color: #0095f6;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.2s, opacity 0.2s;
+}
+.add-btn:hover { transform: scale(1.1); opacity: 0.8; }
+
+/* Formulário de publicação */
+.form-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+.form-container h3 { margin-bottom: 15px; }
+.form-container label { display: block; margin-top: 10px; color: #555; }
+.form-container input {
+  width: 100%; padding: 8px; margin-top: 5px;
+  border: 1px solid #ccc; border-radius: 5px;
+}
+.form-buttons {
+  margin-top: 15px; display: flex; gap: 10px;
+}
+.form-buttons button {
+  flex: 1; padding: 10px; border: none; border-radius: 5px; cursor: pointer;
+}
+.form-buttons button[type="submit"] { background: #0095f6; color: #fff; }
+.form-buttons button[type="button"] { background: #e02525; color: #fff; }
+.form-buttons button:hover { opacity: 0.8; }
+
+/* Card de publicação */
+.publicacao {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.publicacao img { width: 100%; display: block; }
+.publicacao .conteudo { padding: 15px; }
+.publicacao .descricao { font-size: 1rem; color: #333; margin-bottom: 8px; }
+.publicacao .data-local { font-size: 0.85rem; color: #777; margin-bottom: 10px; }
+
+/* Lista de comentários */
+.comments-list {
+  margin-bottom: 10px;
+}
+.comment-item {
+  background: #f1f1f1;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+/* Formulário de comentário */
+.comment-card {
+  background: #fdfdfd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+.comment-card h4 { margin-bottom: 10px; font-size: 1rem; color: #333; }
+.comment-card label { display: block; margin-bottom: 5px; color: #555; }
+.comment-card textarea {
+  width: 100%; height: 60px;
+  padding: 8px; border: 1px solid #ccc; border-radius: 5px;
+}
+.comment-card .form-buttons {
+  margin-top: 10px; display: flex; gap: 8px;
+}
+.comment-card .form-buttons button {
+  flex: 1; padding: 8px; border: none; border-radius: 5px; cursor: pointer;
+}
+.comment-card .form-buttons button[type="submit"] {
+  background: #4caf50; color: #fff;
+}
+.comment-card .form-buttons button[type="button"] {
+  background: #e02525; color: #fff;
+}
+.comment-card button:hover { opacity: 0.8; }
+
+/* Botões de ação */
+.publicacao .actions {
+  display: flex; justify-content: flex-end;
+  gap: 8px; padding: 10px 15px; border-top: 1px solid #eee;
+}
+.like-btn, .delete-btn, .comment-btn {
+  padding: 6px 12px; border: none; border-radius: 5px; cursor: pointer;
+  font-size: 0.9rem;
+  display: flex; align-items: center; gap: 6px;
+}
+.like-btn {
+  background: #fff;
+  color: #555;
+  border: 1px solid #ccc;
+  transition: background 0.2s, color 0.2s;
+}
+.like-btn .heart-icon {
+  font-size: 1.1rem;
+  color: #e02525;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.like-btn.liked {
+  background: #ffe6e6;
+  color: #e02525;
+}
+.like-btn.liked .heart-icon {
+  opacity: 1;
+}
+.like-btn:hover { background: #f0f0f0; }
+.delete-btn { background: #e02525; color: #fff; }
+.comment-btn { background: #4caf50; color: #fff; }
+.publicacao .actions button:not(.like-btn):hover { opacity: 0.8; }
+
+
+
+/* Stories */
+.stories-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+.story-item {
+  flex: 0 0 auto;
+  width: 80px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+.story-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0095f6;
+  padding: 2px;
+}
+
+/* Resto do seu CSS continua igual abaixo */
+/* Botão de adicionar story */
+.add-story-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px; height: 40px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.2s, opacity 0.2s;
+}
+.add-story-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.modal-content input, .modal-content button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #218838;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
